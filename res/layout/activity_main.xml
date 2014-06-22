@@ -12,22 +12,19 @@
         android:id="@+id/passwordtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="117dp"
         android:ems="10"
-        android:inputType="textPassword" >
-
-        <requestFocus />
-    </EditText>
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/gobutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="46dp"
+        android:layout_alignLeft="@+id/passwordtext"
+        android:layout_alignRight="@+id/passwordtext"
+        android:layout_centerVertical="true"
         android:text="Enter Wallet" />
 
 </RelativeLayout>
