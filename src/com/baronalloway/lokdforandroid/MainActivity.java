@@ -1,6 +1,12 @@
-package com.example.lokdforandroid;
+package com.baronalloway.lokdforandroid;
+
+import java.io.File;
+import java.io.IOException;
+
+import com.example.lokdforandroid.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,6 +20,7 @@ public class MainActivity extends Activity {
 	String password;
 	EditText passwordView;
 	Button goButton;
+	EncryptionKey userKey;
 	
 	
 	@Override
@@ -30,10 +37,35 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 			password = passwordView.getText().toString();	
 			
+			Context c = getApplicationContext();
+			
+			File f = new File(c.getFilesDir(), "test.wal");
+			Log.i(null, c.getFilesDir().toString());
+			
+			if(f.exists())
+			{
+				Log.i(null, "file exists");
+			}
+			else
+			{
+				Log.i(null, "file does not exist");
+			}
 				
+			try {
+				f.createNewFile();
 				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			
+			
+			
 				
 			}});
+		
 		
 		
 		
