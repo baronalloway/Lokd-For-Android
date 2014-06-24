@@ -1,13 +1,7 @@
 package com.baronalloway.lokdforandroid;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.io.StreamCorruptedException;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -21,7 +15,6 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SealedObject;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -30,7 +23,7 @@ import javax.crypto.spec.SecretKeySpec;
 import android.content.Context;
 import android.util.Log;
 
-public class EncryptionKey {
+public class EncryptionKey{
 	
 	private static byte[] key;
     private static SecretKeySpec secretKey;
@@ -85,6 +78,30 @@ public class EncryptionKey {
         return dcipher;
     }
     
+    
+    public List<WalletItem> get(SecretKeySpec inKey, Cipher cipher, Cipher dcipher, Context c) throws IOException, ClassNotFoundException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+        //creating an arrayList of walletItems
+        List<WalletItem> items = new ArrayList<WalletItem>();
+        
+        
+        
+        File f = new File(c.getFilesDir(), "walletItem.wal");
+        
+        if(f.exists())
+        {
+        	Log.i("info", "file exists");
+        }
+        else
+        {
+        	Log.i("info", "file does not exist");
+        }
+        
+        
+        
+        
+        //return this ArrayList
+        return items;
+    }
     
     
   

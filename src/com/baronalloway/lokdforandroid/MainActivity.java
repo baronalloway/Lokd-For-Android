@@ -52,9 +52,14 @@ public class MainActivity extends Activity {
 				e.printStackTrace();
 				Toast.makeText(getApplicationContext(), "PLEASE INPUT A PASSWORD", 5).show();
 			} 
-				
-			
-			
+			try
+			{
+			userKey.get(userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 			
 			
 			
