@@ -1,7 +1,12 @@
 package com.baronalloway.lokdforandroid;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -15,6 +20,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SealedObject;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -82,25 +88,72 @@ public class EncryptionKey{
     public List<WalletItem> get(SecretKeySpec inKey, Cipher cipher, Cipher dcipher, Context c) throws IOException, ClassNotFoundException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         //creating an arrayList of walletItems
         List<WalletItem> items = new ArrayList<WalletItem>();
-        
-        
-        
         File f = new File(c.getFilesDir(), "walletItem.wal");
+        FileInputStream in = null;
+        ObjectInputStream obj = null;
         
+        //if the file exists
         if(f.exists())
         {
+        	//great!
         	Log.i("info", "file exists");
         }
+        //otherwise...
         else
         {
+        	//save a blank new file first,
         	Log.i("info", "file does not exist");
+        	saveFile(items, inKey, cipher, dcipher, c);
+        	
         }
+        //TODO: then open the file (blank or not) and return it
+        in = new FileInputStream(f);
+        obj = new ObjectInputStream(in);
         
+      //get the sealed Item in the file
+        SealedObject so = (SealedObject) obj.readObject();
+        //decrypt and populate into a WalletItem list
+        items = (List<WalletItem>) so.getObject(dcipher);
+        
+        
+        obj.close();
+        in.close();
         
         
         
         //return this ArrayList
         return items;
+    }
+    
+    public void saveFile(List<WalletItem> encryptingItem, SecretKeySpec key, Cipher cipher, Cipher dcipher, Context c)
+    {
+    	FileOutputStream out = null;
+    	ObjectOutputStream obj = null;
+    	//TODO: write code to save the file (follow template from computer version)
+    	Log.i("info", "Saving file");
+    	File f = new File(c.getFilesDir(), "walletItem.wal");
+    	
+    	try{
+    	out = new FileOutputStream(f);
+        obj = new ObjectOutputStream(out);
+    	}
+    	catch(Exception e)
+    	{
+    		e.printStackTrace();
+    	}
+    	try{
+    	SealedObject so = new SealedObject((Serializable) encryptingItem, cipher);
+        //write the object to file
+        obj.writeObject(so);
+        //close the streams
+        obj.close();
+        out.close();
+    	}
+    	catch (Exception e)
+    	{
+    		e.printStackTrace();
+    	}
+    	
     }
     
     
