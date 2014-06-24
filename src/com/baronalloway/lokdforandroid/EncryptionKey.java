@@ -2,7 +2,6 @@ package com.baronalloway.lokdforandroid;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -27,6 +26,9 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
+
+import android.content.Context;
+import android.util.Log;
 
 public class EncryptionKey {
 	
@@ -84,13 +86,10 @@ public class EncryptionKey {
     }
     
     
-   // public List<WalletItem> get(SecretKeySpec inKey, Cipher cipher, Cipher dcipher) throws StreamCorruptedException, IOException, IllegalBlockSizeException, NoSuchAlgorithmException, ClassNotFoundException, BadPaddingException
-    {
-    	//File file = new File(context.getFilesDir(), filename);
-    	//List<WalletItem> items = new ArrayList<WalletItem>();
-    	
-    	//try to find the file
-    }
+    
+  
+    
+    
     }	
 
 
