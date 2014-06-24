@@ -1,9 +1,11 @@
 package com.baronalloway.lokdforandroid;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.lokdforandroid.R;
 
@@ -38,14 +41,20 @@ public class MainActivity extends Activity {
 				Log.i("info", "button clicked");
 			password = passwordView.getText().toString();
 				Log.i("info", password);
+				
+				
+				
 			
 			try {
 				userKey = new EncryptionKey(password);
 				Log.i("info", userKey.toString());
 			} catch (Exception e) {
 				e.printStackTrace();
+				Toast.makeText(getApplicationContext(), "PLEASE INPUT A PASSWORD", 5).show();
 			} 
 				
+			
+			
 			
 			
 			
