@@ -35,16 +35,11 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				Log.i("info", "button clicked");
 			password = passwordView.getText().toString();
-				Log.i("info", password);
-				
-				
-				
 			
 			try {
 				userKey = new EncryptionKey(password);
-				Log.i("info", userKey.toString());
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 				Toast.makeText(getApplicationContext(), "PLEASE INPUT A PASSWORD", 5).show();
@@ -79,8 +74,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 

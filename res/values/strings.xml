@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_wallet_view">WalletView</string>
     <string name="title_activity_view_wallet">ViewWallet</string>
+    <string name="title_activity_view_item">ViewItem</string>
 
 </resources>

@@ -31,6 +31,10 @@
             android:name="com.baronalloway.lokdforandroid.ViewWallet"
             android:label="@string/title_activity_view_wallet" >
         </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.ViewItem"
+            android:label="@string/title_activity_view_item" >
+        </activity>
     </application>
 
 </manifest>
