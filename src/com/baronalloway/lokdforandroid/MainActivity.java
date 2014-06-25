@@ -1,11 +1,10 @@
 package com.baronalloway.lokdforandroid;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,8 +13,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.lokdforandroid.R;
 
 public class MainActivity extends Activity {
 
@@ -55,10 +52,17 @@ public class MainActivity extends Activity {
 			try
 			{
 			userKey.get(userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
+			
+			Intent walletIntent = new Intent(MainActivity.this, ViewWallet.class);
+			walletIntent.putExtra("password", password);
+			startActivity(walletIntent);
+			
+			
 			}
 			catch(Exception e)
 			{
 				e.printStackTrace();
+				Toast.makeText(getApplicationContext(), "Error! WRONG PASSWORD", 7).show();
 			}
 			
 			
@@ -76,7 +80,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 

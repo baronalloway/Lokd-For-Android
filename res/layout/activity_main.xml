@@ -25,6 +25,8 @@
         android:layout_alignLeft="@+id/passwordtext"
         android:layout_alignRight="@+id/passwordtext"
         android:layout_centerVertical="true"
-        android:text="Enter Wallet" />
+        android:text="Enter Wallet"
+        android:background="@drawable/custom_button"
+         />
 
 </RelativeLayout>
