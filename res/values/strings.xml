@@ -7,5 +7,6 @@
     <string name="title_activity_wallet_view">WalletView</string>
     <string name="title_activity_view_wallet">ViewWallet</string>
     <string name="title_activity_view_item">ViewItem</string>
+    <string name="title_activity_item_adder">ItemAdder</string>
 
 </resources>

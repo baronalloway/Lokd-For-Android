@@ -35,6 +35,10 @@
             android:name="com.baronalloway.lokdforandroid.ViewItem"
             android:label="@string/title_activity_view_item" >
         </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.ItemAdder"
+            android:label="@string/title_activity_item_adder" >
+        </activity>
     </application>
 
 </manifest>

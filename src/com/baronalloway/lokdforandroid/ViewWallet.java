@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class ViewWallet extends Activity {
@@ -23,12 +25,14 @@ public class ViewWallet extends Activity {
 	ArrayAdapter<String> arrayAdapter;
 	List<String> itemNames = new ArrayList<String>();
 	String selectedName;
+	Button addItemButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_wallet);
 		walletList = (ListView)findViewById(R.id.listView1);
+		addItemButton = (Button)findViewById(R.id.button1);
 		
 		
 		setTitle("My Wallet");
@@ -75,6 +79,22 @@ public class ViewWallet extends Activity {
 				
 				
 			}});
+		
+		
+		
+		addItemButton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				
+				Intent goAddItem = new Intent(ViewWallet.this, ItemAdder.class);
+				goAddItem.putExtra("password", password);
+				startActivity(goAddItem);
+				
+				
+			}});
+		
+		
 	
 		
 		
