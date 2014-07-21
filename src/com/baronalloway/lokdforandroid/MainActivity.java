@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 			password = passwordView.getText().toString();
+			passwordView.setText("");
 			
 			try {
 				userKey = new EncryptionKey(password);

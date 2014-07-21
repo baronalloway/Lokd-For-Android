@@ -26,6 +26,7 @@ public class ViewWallet extends Activity {
 	List<String> itemNames = new ArrayList<String>();
 	String selectedName;
 	Button addItemButton;
+	Button lockWalletButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class ViewWallet extends Activity {
 		setContentView(R.layout.activity_view_wallet);
 		walletList = (ListView)findViewById(R.id.listView1);
 		addItemButton = (Button)findViewById(R.id.button1);
-		
+		lockWalletButton = (Button)findViewById(R.id.lockbutton);
 		
 		setTitle("My Wallet");
 		
@@ -92,6 +93,17 @@ public class ViewWallet extends Activity {
 				startActivity(goAddItem);
 				
 				
+			}});
+		
+		
+		lockWalletButton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
+				finish();
+//				Intent lockWallet = new Intent(ViewWallet.this, MainActivity.class);
+//				startActivity(lockWallet);
 			}});
 		
 		
