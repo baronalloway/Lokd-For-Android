@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -14,9 +19,13 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ViewWallet extends Activity {
 
+	//TODO: create a settings menu with a change password option
+	
+	
 	
 	String password;
 	EncryptionKey userKey;
@@ -77,7 +86,8 @@ public class ViewWallet extends Activity {
 				viewItemIntent.putExtra("password", password);
 				viewItemIntent.putExtra("selected", selectedName);
 				startActivity(viewItemIntent);
-				
+				arrayAdapter.notifyDataSetChanged();
+				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
 				
 			}});
 		
@@ -87,10 +97,10 @@ public class ViewWallet extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				
+				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
 				Intent goAddItem = new Intent(ViewWallet.this, ItemAdder.class);
 				goAddItem.putExtra("password", password);
-				startActivity(goAddItem);
+				startActivityForResult(goAddItem, 1);
 				
 				
 			}});
@@ -101,9 +111,15 @@ public class ViewWallet extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
-				finish();
-//				Intent lockWallet = new Intent(ViewWallet.this, MainActivity.class);
-//				startActivity(lockWallet);
+				
+				
+				Intent lockActivities = new Intent(ViewWallet.this, MainActivity.class);
+				Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.leftanim2,R.anim.leftanim).toBundle();
+				lockActivities.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				startActivity(lockActivities, bndlanimation);
+				
+				
+
 			}});
 		
 		
@@ -119,8 +135,19 @@ public class ViewWallet extends Activity {
 		return true;
 	}
 	
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    Intent intent = new Intent(ViewWallet.this, ChangePassword.class);
+	    startActivity(intent);
+	    return true;
+	}
+	
+	
+	
+	
 	public void updateList()
 	{
+		itemNames.clear();
 		for(int i = 0; i < myItems.size(); i++)
 		{
 			itemNames.add(myItems.get(i).getName());
@@ -131,5 +158,31 @@ public class ViewWallet extends Activity {
                 android.R.layout.simple_list_item_1,
                 itemNames);
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data){
+		
+		Log.i("info", "MADE IT");
+		try{
+		WalletItem addedItem = (WalletItem) data.getExtras().get("new_item");
+		
+		
+		myItems.add(addedItem);
+		Log.i("info", "SAVING THE FILE WITH NEW WALLETITEM");
+		userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
+		updateList();
+		}
+		catch(Exception e)
+		{
+			updateList();
+		}
+		
+	}
+	
+	
+	@Override
+	public void onBackPressed() {
+		Toast.makeText(getApplicationContext(), "WHOOPS...KEEP MOVING FORWARD", 5).show();
+	}
+	
 
 }

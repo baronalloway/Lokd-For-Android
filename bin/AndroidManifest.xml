@@ -5,8 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="16"
         android:targetSdkVersion="18" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -38,6 +44,14 @@
         <activity
             android:name="com.baronalloway.lokdforandroid.ItemAdder"
             android:label="@string/title_activity_item_adder" >
+        </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.Camera_capture"
+            android:label="@string/title_activity_camera_capture" >
+        </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.ChangePassword"
+            android:label="@string/title_activity_change_password" >
         </activity>
     </application>
 

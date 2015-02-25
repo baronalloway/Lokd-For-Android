@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -51,7 +51,8 @@ public class MainActivity extends Activity {
 			
 			Intent walletIntent = new Intent(MainActivity.this, ViewWallet.class);
 			walletIntent.putExtra("password", password);
-			startActivity(walletIntent);
+			Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.anim,R.anim.anim2).toBundle();
+			startActivity(walletIntent, bndlanimation);
 			
 			
 			}
@@ -77,5 +78,12 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		return true;
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Toast.makeText(getApplicationContext(), "WHOOPS...KEEP MOVING FORWARD", 5).show();
+	}
+	
+	
 
 }

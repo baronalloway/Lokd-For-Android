@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.util.Log;
 
 public class ImageSer implements Serializable{
 	
-	//TODO: Write class so that it serializes the image that was taken, and another method to unserialize
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int width;
     int height;
     int[] pixels;
@@ -17,7 +22,7 @@ public class ImageSer implements Serializable{
 		width = image.getWidth();
 		height = image.getHeight();
 		pixels = new int[width * height];
-		
+		Log.i("info", "CREATING NEW IMAGESER IN CLASS");
 		image.getPixels(pixels, 0, width, 0, 0, width, height);
 	}
 	
