@@ -7,8 +7,6 @@ import android.graphics.Bitmap.Config;
 import android.util.Log;
 
 public class ImageSer implements Serializable{
-	
-	
 	/**
 	 * 
 	 */
