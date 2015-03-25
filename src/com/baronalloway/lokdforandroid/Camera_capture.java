@@ -1,6 +1,5 @@
 package com.baronalloway.lokdforandroid;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import android.app.Activity;
@@ -15,14 +14,15 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Camera_capture extends Activity implements SurfaceHolder.Callback{
 	private Camera mCamera;
 	private SurfaceView surfaceView;
 	private SurfaceHolder surfaceHolder;
-	private Button capture_image;
-	private Button cancelButton;
+	private ImageButton capture_image;
+	private ImageButton cancelButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class Camera_capture extends Activity implements SurfaceHolder.Callback{
 	    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	    setContentView(R.layout.activity_camera_capture);
 	    
-	    capture_image = (Button) findViewById(R.id.capture_image);
+	    capture_image = (ImageButton) findViewById(R.id.capture_image);
 	    capture_image.setOnClickListener(new View.OnClickListener() {
 
 	        @Override
@@ -40,7 +40,7 @@ public class Camera_capture extends Activity implements SurfaceHolder.Callback{
 	        }
 	    });
 	    
-	    cancelButton = (Button)findViewById(R.id.cancelButton);
+	    cancelButton = (ImageButton)findViewById(R.id.cancelButton);
 	    cancelButton.setOnClickListener(new View.OnClickListener(){
 
 			@Override

@@ -28,19 +28,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int add_item_png=0x7f020000;
-        public static final int custom_button=0x7f020001;
-        public static final int custom_login=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int lock_button_png=0x7f020004;
-        public static final int lockscreen=0x7f020005;
-        public static final int login_button_png=0x7f020006;
-        public static final int login_key_png=0x7f020007;
+        public static final int cancel_png=0x7f020001;
+        public static final int custom_button=0x7f020002;
+        public static final int custom_login=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int lock_button_png=0x7f020005;
+        public static final int lockscreen=0x7f020006;
+        public static final int login_button_png=0x7f020007;
+        public static final int login_key_png=0x7f020008;
+        public static final int take_picture_png=0x7f020009;
     }
     public static final class id {
         public static final int action_settings=0x7f09000f;
         public static final int addItemButton=0x7f09000e;
-        public static final int cancelButton=0x7f090002;
-        public static final int capture_image=0x7f090001;
+        public static final int cancelButton=0x7f090001;
+        public static final int capture_image=0x7f090002;
         public static final int changePicture=0x7f090009;
         public static final int closeButton=0x7f09000b;
         public static final int deleteButton=0x7f09000a;
@@ -83,6 +85,8 @@ public final class R {
         public static final int title_activity_wallet_view=0x7f060003;
     }
     public static final class style {
+        /**  This does the magic! 
+         */
         public static final int ActionBarStyle=0x7f070002;
         /** 
         Base application theme, dependent on API level. This theme is replaced
