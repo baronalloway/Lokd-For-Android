@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.baronalloway.lokdforandroid"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0"
+    android:theme="@style/AppTheme" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -21,7 +22,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.baronalloway.lokdforandroid.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,19 +33,23 @@
         <activity
             android:name="com.baronalloway.lokdforandroid.WalletView"
             android:label="@string/title_activity_wallet_view"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.ViewWallet"
-            android:label="@string/title_activity_view_wallet" >
+            android:label="@string/title_activity_view_wallet"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.ViewItem"
-            android:label="@string/title_activity_view_item" >
+            android:label="@string/title_activity_view_item"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.ItemAdder"
-            android:label="@string/title_activity_item_adder" >
+            android:label="@string/title_activity_item_adder"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.Camera_capture"
@@ -51,7 +57,8 @@
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.ChangePassword"
-            android:label="@string/title_activity_change_password" >
+            android:label="@string/title_activity_change_password"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

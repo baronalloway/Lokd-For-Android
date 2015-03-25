@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -21,6 +22,7 @@ public class MainActivity extends Activity {
 	Button goButton;
 	EncryptionKey userKey;
 	List<WalletItem> myItems = new ArrayList<WalletItem>();
+	ImageButton goButton1;
 	
 	
 	@Override
@@ -29,9 +31,10 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		passwordView  = (EditText)findViewById(R.id.passwordtext);
-		goButton = (Button)findViewById(R.id.gobutton);
+		//goButton = (Button)findViewById(R.id.gobutton);
+		goButton1 = (ImageButton)findViewById(R.id.gobutton1);
 		
-		goButton.setOnClickListener(new OnClickListener(){
+		goButton1.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View arg0) {

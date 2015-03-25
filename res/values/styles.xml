@@ -16,5 +16,16 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+    <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+</style>
+
+<style name="ActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar">     
+    <item name="android:colorBackground">#22a86c</item>
+    <item name="android:background">#22a86c</item>
+    <item name="android:icon">@android:color/transparent</item> <!-- This does the magic! -->
+</style>
 
 </resources>

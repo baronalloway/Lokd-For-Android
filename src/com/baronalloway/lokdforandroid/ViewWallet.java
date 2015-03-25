@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,16 +33,16 @@ public class ViewWallet extends Activity {
 	ArrayAdapter<String> arrayAdapter;
 	List<String> itemNames = new ArrayList<String>();
 	String selectedName;
-	Button addItemButton;
-	Button lockWalletButton;
+	ImageButton addItemButton;
+	ImageButton lockWalletButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_wallet);
 		walletList = (ListView)findViewById(R.id.listView1);
-		addItemButton = (Button)findViewById(R.id.button1);
-		lockWalletButton = (Button)findViewById(R.id.lockbutton);
+		addItemButton = (ImageButton)findViewById(R.id.addItemButton);
+		lockWalletButton = (ImageButton)findViewById(R.id.lockbutton);
 		
 		setTitle("My Wallet");
 		

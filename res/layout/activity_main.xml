@@ -6,28 +6,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-	android:background="@drawable/lockscreen"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="#FFFFFF" >
+
+    <ImageButton
+        android:id="@+id/gobutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/login_button_png"
+        android:src="@drawable/login_button_png" />
 
     <EditText
         android:id="@+id/passwordtext"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_height="32dp"
+        android:layout_above="@+id/gobutton1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="117dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/custom_login"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textSize="15sp" >
 
-    <Button
-        android:id="@+id/gobutton"
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/keylogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordtext"
-        android:layout_alignRight="@+id/passwordtext"
-        android:layout_centerVertical="true"
-        android:text="Enter Wallet"
-        android:background="@drawable/custom_button"
-         />
+        android:layout_alignTop="@+id/passwordtext"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/passwordtext"
+        android:background="@drawable/login_key_png"
+        />
 
 </RelativeLayout>

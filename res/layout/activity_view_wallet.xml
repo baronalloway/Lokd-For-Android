@@ -19,23 +19,24 @@
          >
     </ListView>
 
-    <Button
-        android1:id="@+id/button1"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignLeft="@+id/listView1"
-        android1:layout_alignRight="@+id/listView1"
-        android1:layout_below="@+id/listView1"
-        android1:text="Add Item" />
-
-    <Button
+    <ImageButton
         android1:id="@+id/lockbutton"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignLeft="@+id/button1"
-        android1:layout_alignRight="@+id/button1"
-        android1:layout_below="@+id/button1"
-        android1:layout_marginTop="15dp"
-        android1:text="LOCK" />
+        android1:layout_alignParentRight="true"
+        android1:layout_below="@+id/listView1"
+        android1:layout_marginTop="21dp"
+        android1:background="@drawable/lock_button_png"
+        android1:src="@drawable/lock_button_png" />
+
+    <ImageButton
+        android1:id="@+id/addItemButton"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignLeft="@+id/listView1"
+        android1:layout_alignTop="@+id/lockbutton"
+        android1:background="@drawable/add_item_png"
+        
+        android1:src="@drawable/add_item_png" />
 
 </RelativeLayout>
