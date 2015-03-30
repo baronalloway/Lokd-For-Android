@@ -15,37 +15,34 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/changePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
         android:layout_alignRight="@+id/imageView1"
         android:layout_below="@+id/imageView1"
-        android:layout_marginTop="54dp"
-        android:text="Change Picture"
-        android:fontFamily="Roboto" />
+        android:layout_marginTop="58dp"
+        android:background="@drawable/change_picture"
+        android:src="@drawable/change_picture" />
 
-    <Button
+    <ImageButton
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/changePicture"
-        android:layout_alignRight="@+id/changePicture"
-        android:layout_below="@+id/changePicture"
-        android:layout_marginTop="16dp"
-        android:fontFamily="Roboto"
-        android:text="Delete Item" />
-    
-    <Button
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_alignTop="@+id/changePicture"
+        android:background="@drawable/delete"
+        android:src="@drawable/delete" />
+
+    <ImageButton
         android:id="@+id/closeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/deleteButton"
-        android:layout_alignRight="@+id/deleteButton"
-        android:layout_below="@+id/deleteButton"
+        android:layout_alignRight="@+id/changePicture"
+        android:layout_below="@+id/changePicture"
         android:layout_marginTop="16dp"
-        android:fontFamily="Roboto"
-        android:text="Done"/>
+        android:background="@drawable/done"
+        android:src="@drawable/done" />
 
 </RelativeLayout>

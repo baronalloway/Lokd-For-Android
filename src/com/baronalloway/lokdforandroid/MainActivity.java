@@ -31,7 +31,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		passwordView  = (EditText)findViewById(R.id.passwordtext);
-		//goButton = (Button)findViewById(R.id.gobutton);
 		goButton1 = (ImageButton)findViewById(R.id.gobutton1);
 		
 		goButton1.setOnClickListener(new OnClickListener(){
@@ -66,13 +65,7 @@ public class MainActivity extends Activity {
 			}
 			
 			
-			
-			
 			}});
-		
-		
-		
-		
 		
 		
 	}

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,7 +20,7 @@ public class ItemAdder extends Activity {
 String password;
 EncryptionKey userKey;
 Bitmap imageBitmap = null;
-Button saveButton;
+ImageButton saveButton;
 EditText nameText;
 ImageView picView;
 WalletItem newItem;
@@ -31,7 +32,7 @@ String name;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_item_adder);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		saveButton = (Button)findViewById(R.id.saveButton);
+		saveButton = (ImageButton)findViewById(R.id.saveButton);
 		nameText = (EditText)findViewById(R.id.nameField);
 		picView = (ImageView)findViewById(R.id.imageView1);
 		

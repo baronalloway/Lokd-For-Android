@@ -84,7 +84,8 @@ public class ViewWallet extends Activity {
 				Intent viewItemIntent = new Intent(ViewWallet.this, ViewItem.class);
 				viewItemIntent.putExtra("password", password);
 				viewItemIntent.putExtra("selected", selectedName);
-				startActivity(viewItemIntent);
+				Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fadeanim,R.anim.blankanim).toBundle();
+				startActivity(viewItemIntent, bndlanimation);
 				arrayAdapter.notifyDataSetChanged();
 				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
 				
@@ -137,6 +138,7 @@ public class ViewWallet extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    Intent intent = new Intent(ViewWallet.this, ChangePassword.class);
+	   intent.putExtra("password", password);
 	    startActivity(intent);
 	    return true;
 	}
@@ -180,7 +182,7 @@ public class ViewWallet extends Activity {
 	
 	@Override
 	public void onBackPressed() {
-		Toast.makeText(getApplicationContext(), "WHOOPS...KEEP MOVING FORWARD", 5).show();
+		
 	}
 	
 

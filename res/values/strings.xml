@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+
+
 <resources>
 
     <string name="app_name">Lokd</string>
@@ -10,5 +11,6 @@
     <string name="title_activity_item_adder">ItemAdder</string>
     <string name="title_activity_camera_capture">Camera_capture</string>
     <string name="title_activity_change_password">ChangePassword</string>
+   
 
 </resources>

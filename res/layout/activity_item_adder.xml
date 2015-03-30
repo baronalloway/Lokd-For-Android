@@ -8,14 +8,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemAdder" >
 
-    <Button
+   
+    
+    <ImageButton 
         android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
+         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Save" />
+        android:src="@drawable/save"
+        android:background="@drawable/save"/>
 
     <ImageView
         android:id="@+id/imageView1"

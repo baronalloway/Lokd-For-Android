@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,10 +28,10 @@ public class ViewItem extends Activity {
 	int a = 0;
 	ImageView picView;
 	Bitmap image;
-	Button changePicButton;
-	Button deleteItemButton;
+	ImageButton changePicButton;
+	ImageButton deleteItemButton;
 	ImageSer newImageSer;
-	Button closeButton;
+	ImageButton closeButton;
 	
 	
 	
@@ -39,9 +41,9 @@ public class ViewItem extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_item);
 		picView = (ImageView)findViewById(R.id.imageView1);
-		changePicButton = (Button)findViewById(R.id.changePicture);
-		deleteItemButton = (Button)findViewById(R.id.deleteButton);
-		closeButton = (Button)findViewById(R.id.closeButton);
+		changePicButton = (ImageButton)findViewById(R.id.changePicture);
+		deleteItemButton = (ImageButton)findViewById(R.id.deleteButton);
+		closeButton = (ImageButton)findViewById(R.id.closeButton);
 		
 		Intent i = getIntent();
 		
@@ -103,8 +105,8 @@ public class ViewItem extends Activity {
 				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
 				Intent newIntent = new Intent(ViewItem.this, ViewWallet.class);
 				newIntent.putExtra("password", password);
-				
-				startActivity(newIntent);
+				Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fadeanim,R.anim.blankanim).toBundle();
+				startActivity(newIntent, bndlanimation);
 				
 				
 			}});
@@ -116,8 +118,8 @@ public class ViewItem extends Activity {
 				userKey.saveFile(myItems, userKey.getKey(), userKey.getCipher(), userKey.getDCipher(), getApplicationContext());
 				Intent newIntent = new Intent(ViewItem.this, ViewWallet.class);
 				newIntent.putExtra("password", password);
-				
-				startActivity(newIntent);
+				Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fadeanim,R.anim.blankanim).toBundle();
+				startActivity(newIntent, bndlanimation);
 				
 			}});
 		

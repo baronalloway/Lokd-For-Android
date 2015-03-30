@@ -84,6 +84,13 @@ public class EncryptionKey{
         return dcipher;
     }
     
+    public void delete(Context c)
+    {
+    	File f = new File(c.getFilesDir(), "walletItem.wal");
+    	f.delete();
+    	
+    }
+    
     
     public List<WalletItem> get(SecretKeySpec inKey, Cipher cipher, Cipher dcipher, Context c) throws IOException, ClassNotFoundException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         //creating an arrayList of walletItems
