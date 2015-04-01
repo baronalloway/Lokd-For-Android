@@ -1,5 +1,6 @@
 package com.baronalloway.lokdforandroid;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,16 @@ public class MainActivity extends Activity {
 		
 		passwordView  = (EditText)findViewById(R.id.passwordtext);
 		goButton1 = (ImageButton)findViewById(R.id.gobutton1);
+		
+		
+		//check for wallet file and then do stuff from here
+		File f = new File(getApplicationContext().getFilesDir(), "walletItem.wal");
+		if(!(f.exists()))
+		{
+			//GO TO WELCOME POPUPS
+			Intent goWelcome = new Intent(MainActivity.this, Welcome.class);
+			startActivity(goWelcome);
+		}
 		
 		goButton1.setOnClickListener(new OnClickListener(){
 

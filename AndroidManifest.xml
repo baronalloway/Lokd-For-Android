@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.baronalloway.lokdforandroid"
+    android:theme="@style/AppTheme"
     android:versionCode="1"
-    android:versionName="1.0"
-    android:theme="@style/AppTheme" >
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -33,8 +32,8 @@
         <activity
             android:name="com.baronalloway.lokdforandroid.WalletView"
             android:label="@string/title_activity_wallet_view"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name="com.baronalloway.lokdforandroid.ViewWallet"
@@ -60,6 +59,21 @@
             android:label="@string/title_activity_change_password"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.WelcomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.WelcomeActvitiy"
+            android:label="@string/title_activity_welcome_actvitiy" >
+        </activity>
+        <activity
+            android:name="com.baronalloway.lokdforandroid.Welcome"
+            android:label="@string/title_activity_welcome" >
+        </activity>
     </application>
 
 </manifest>
+

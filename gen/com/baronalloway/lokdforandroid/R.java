@@ -16,8 +16,20 @@ public final class R {
         public static final int fadeanim1=0x7f040004;
         public static final int leftanim=0x7f040005;
         public static final int leftanim2=0x7f040006;
+        public static final int objectfade=0x7f040007;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int buttonBarButtonStyle=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int buttonBarStyle=0x7f010000;
+    }
+    public static final class color {
+        public static final int black_overlay=0x7f050000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -26,8 +38,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int add_item_png=0x7f020000;
@@ -42,30 +54,37 @@ public final class R {
         public static final int lockscreen=0x7f020009;
         public static final int login_button_png=0x7f02000a;
         public static final int login_key_png=0x7f02000b;
-        public static final int save=0x7f02000c;
-        public static final int take_picture_png=0x7f02000d;
+        public static final int newlogo_512=0x7f02000c;
+        public static final int save=0x7f02000d;
+        public static final int start=0x7f02000e;
+        public static final int take_picture_png=0x7f02000f;
     }
     public static final class id {
-        public static final int action_settings=0x7f090013;
-        public static final int addItemButton=0x7f090012;
-        public static final int button1=0x7f090004;
-        public static final int cancelButton=0x7f090001;
-        public static final int capture_image=0x7f090002;
-        public static final int changePassword=0x7f090005;
-        public static final int changePicture=0x7f09000d;
-        public static final int closeButton=0x7f09000f;
-        public static final int deleteButton=0x7f09000e;
-        public static final int gobutton1=0x7f09000a;
-        public static final int imageView1=0x7f090008;
-        public static final int keylogo=0x7f09000c;
-        public static final int listView1=0x7f090010;
-        public static final int lockbutton=0x7f090011;
-        public static final int nameField=0x7f090009;
-        public static final int nukewallet=0x7f090006;
-        public static final int passwordtext=0x7f09000b;
-        public static final int saveButton=0x7f090007;
-        public static final int surfaceview=0x7f090000;
-        public static final int textView1=0x7f090003;
+        public static final int action_settings=0x7f0a0018;
+        public static final int addItemButton=0x7f0a0012;
+        public static final int button1=0x7f0a0004;
+        public static final int cancelButton=0x7f0a0001;
+        public static final int capture_image=0x7f0a0002;
+        public static final int changePassword=0x7f0a0005;
+        public static final int changePicture=0x7f0a000d;
+        public static final int closeButton=0x7f0a000f;
+        public static final int deleteButton=0x7f0a000e;
+        public static final int gobutton1=0x7f0a000a;
+        public static final int imageView1=0x7f0a0008;
+        public static final int instructionText=0x7f0a0016;
+        public static final int keylogo=0x7f0a000c;
+        public static final int listView1=0x7f0a0010;
+        public static final int lockbutton=0x7f0a0011;
+        public static final int logoView=0x7f0a0014;
+        public static final int nameField=0x7f0a0009;
+        public static final int nukewallet=0x7f0a0006;
+        public static final int passwordtext=0x7f0a000b;
+        public static final int saveButton=0x7f0a0007;
+        public static final int surfaceview=0x7f0a0000;
+        public static final int textView1=0x7f0a0003;
+        public static final int welcomeButton=0x7f0a0015;
+        public static final int welcome_text=0x7f0a0017;
+        public static final int welcome_title=0x7f0a0013;
     }
     public static final class layout {
         public static final int activity_camera_capture=0x7f030000;
@@ -74,31 +93,38 @@ public final class R {
         public static final int activity_main=0x7f030003;
         public static final int activity_view_item=0x7f030004;
         public static final int activity_view_wallet=0x7f030005;
+        public static final int activity_welcome=0x7f030006;
     }
     public static final class menu {
-        public static final int camera_capture=0x7f080000;
-        public static final int change_password=0x7f080001;
-        public static final int item_adder=0x7f080002;
-        public static final int main=0x7f080003;
-        public static final int view_item=0x7f080004;
-        public static final int view_wallet=0x7f080005;
-        public static final int wallet_view=0x7f080006;
+        public static final int camera_capture=0x7f090000;
+        public static final int change_password=0x7f090001;
+        public static final int item_adder=0x7f090002;
+        public static final int main=0x7f090003;
+        public static final int view_item=0x7f090004;
+        public static final int view_wallet=0x7f090005;
+        public static final int wallet_view=0x7f090006;
+        public static final int welcome=0x7f090007;
+        public static final int welcome_actvitiy=0x7f090008;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
-        public static final int title_activity_camera_capture=0x7f060007;
-        public static final int title_activity_change_password=0x7f060008;
-        public static final int title_activity_item_adder=0x7f060006;
-        public static final int title_activity_view_item=0x7f060005;
-        public static final int title_activity_view_wallet=0x7f060004;
-        public static final int title_activity_wallet_view=0x7f060003;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070000;
+        public static final int dummy_button=0x7f07000a;
+        public static final int dummy_content=0x7f07000b;
+        public static final int hello_world=0x7f070002;
+        public static final int title_activity_camera_capture=0x7f070007;
+        public static final int title_activity_change_password=0x7f070008;
+        public static final int title_activity_item_adder=0x7f070006;
+        public static final int title_activity_view_item=0x7f070005;
+        public static final int title_activity_view_wallet=0x7f070004;
+        public static final int title_activity_wallet_view=0x7f070003;
+        public static final int title_activity_welcome=0x7f070009;
+        public static final int title_activity_welcome_actvitiy=0x7f07000c;
     }
     public static final class style {
         /**  This does the magic! 
          */
-        public static final int ActionBarStyle=0x7f070002;
+        public static final int ActionBarStyle=0x7f080002;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -120,10 +146,57 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
+        public static final int ButtonBar=0x7f080005;
+        public static final int ButtonBarButton=0x7f080006;
+        public static final int FullscreenActionBarStyle=0x7f080007;
+        public static final int FullscreenTheme=0x7f080004;
+        public static final int NoTitle=0x7f080003;
     }
+    public static final class styleable {
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle com.baronalloway.lokdforandroid:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle com.baronalloway.lokdforandroid:buttonBarStyle}</code></td><td></td></tr>
+           </table>
+           @see #ButtonBarContainerTheme_buttonBarButtonStyle
+           @see #ButtonBarContainerTheme_buttonBarStyle
+         */
+        public static final int[] ButtonBarContainerTheme = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.baronalloway.lokdforandroid.R.attr#buttonBarButtonStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.baronalloway.lokdforandroid:buttonBarButtonStyle
+        */
+        public static final int ButtonBarContainerTheme_buttonBarButtonStyle = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.baronalloway.lokdforandroid.R.attr#buttonBarStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.baronalloway.lokdforandroid:buttonBarStyle
+        */
+        public static final int ButtonBarContainerTheme_buttonBarStyle = 0;
+    };
 }
